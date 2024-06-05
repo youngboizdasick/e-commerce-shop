@@ -1,0 +1,121 @@
+.highlight-products {
+    width: var(--with-content);
+    margin: auto;
+    padding: 20px 0;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.highlight-products .highlight-title {
+    text-transform: uppercase;
+    font-family: var(--archivo-black);
+    text-align: center;
+}
+
+.highlight-products .product-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.product-list .product {
+    display: flex;
+    width: 100%;
+    height: 420px;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.product:hover .image {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.product .image {
+    height: 300px;
+}
+
+.image img {
+    padding: 20px 0;
+    width: 100%;
+    height: inherit;
+    object-fit: contain;
+}
+
+.product .title {
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-weight: 500;
+}
+
+.product .rating-purchases {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating-purchases .rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-purchases .star-fill {
+    color: #FFDB00;
+}
+
+.purchases p {
+    color: var(--outstanding-content);
+    font-style: italic;
+}
+
+.product .price-addToCart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-addToCart .price {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.price-addToCart .bagplus {
+    color: #fff;
+    background-color: #0095F5;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 9999px;
+}
+
+.highlight-products button {
+    width: 200px;
+    margin: auto;
+    padding: 10px 0;
+    background-color: #fff;
+    border: 1px solid var(--outstanding-content);
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+.highlight-products button:hover {
+    background-color: #eee;
+}
+
+.highlight-products hr {
+    border: 1px solid #eee;
+    border-radius: 9999px;
+}

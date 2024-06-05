@@ -1,0 +1,26 @@
+#brand {
+    background-color: black;
+}
+
+.brand {
+    width: var(--with-content);
+    margin: auto;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+}
+
+.brand img {
+    width: 20%;
+    filter: invert();
+    padding: 16px 64px;
+}
+
+.brand img:first-child {
+    padding-left: 0;
+}
+
+.brand img:last-child {
+    padding-right: 0;
+}

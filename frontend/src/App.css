@@ -1,0 +1,14 @@
+:root {
+    --with-content: 80%;
+    --outstanding-content: #73777B;
+    --archivo-black: 'ArchivoBlack';
+}
+
+@font-face {
+    font-family: 'ArchivoBlack';
+    src: local('ArchivoBlack'), url(./fonts/ArchivoBlack-Regular.ttf) format('truetype');
+}
+
+.icon {
+    font-size: 20px;
+}
