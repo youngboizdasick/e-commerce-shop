@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.css'
-import { Search, Bag, Bell } from 'react-bootstrap-icons'
+import { Search, Bag, Bell, Person } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import { auth, provider, signInWithPopup } from '../../firebase/firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 const Navbar = () => {
     const [menu, setActive] = useState('home');
     const [menuItems, setMenuItems] = useState([]);
+    const [user, setUser] = useState(null);
     let url = 'https://fakestoreapi.com/products/categories';
 
     useEffect(() => {
@@ -22,6 +25,29 @@ const Navbar = () => {
 
         fetchMenuItems();
     }, []);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+        return () => unsubscribe();
+    }, []);
+
+    const handleLogin = async () => {
+        try {
+            await signInWithPopup(auth, provider);
+        } catch (error) {
+            console.error('Error signing in with Google:', error);
+        }
+    };
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+        } catch (error) {
+            console.error('Error signing out:', error);
+        }
+    };
     return (
         <div className='navbar'>
             {/* Logo */}
@@ -59,9 +85,19 @@ const Navbar = () => {
                         <span className="cart-count">0</span>
                     </button>
                 </Link>
-                <Link to='auth'>
-                    <button className='login-btn' type='button'>Login with Google</button>
-                </Link>
+                {user ? (
+                    <>
+                        <Link to='auth'>
+                            <div className="auth">
+                                <Person className='icon' />
+                                <span>{user.displayName}</span>
+                            </div>
+                        </Link>
+                        <button className='login-btn' type='button' onClick={handleLogout}>Logout</button>
+                    </>
+                ) : (
+                    <button className='login-btn' type='button' onClick={handleLogin}>Login with Google</button>
+                )}
             </div>
         </div>
     )

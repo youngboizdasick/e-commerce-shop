@@ -83,6 +83,13 @@
     line-height: 14px;
 }
 
+.navbar-right .auth {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
 .navbar-right .login-btn {
     height: 32px;
     padding: 0 20px;
