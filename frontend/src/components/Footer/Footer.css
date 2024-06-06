@@ -1,0 +1,153 @@
+#footer {
+    background-color: #eee;
+    position: relative;
+    margin-top: 100px;
+}
+
+.contact {
+    position: absolute;
+    top: -20%;
+    left: 10%;
+    padding: 30px 0;
+    background-color: black;
+    width: var(--width-content);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact .contact-left {
+    color: white;
+    text-transform: uppercase;
+    font-family: var(--archivo-black);
+}
+
+.contact .contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-right .input-mail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    gap: 10px;
+    width: 300px;
+}
+
+.input-mail #email {
+    border: none;
+    outline: none;
+    width: inherit;
+}
+
+.contact-right button {
+    padding: 8px 20px;
+    border-radius: 9999px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.contact-right button:hover {
+    background-color: #eee;
+}
+
+.footer {
+    width: var(--width-content);
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.footer .footer-left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-left .title {
+    text-transform: uppercase;
+    font-family: var(--archivo-black);
+}
+
+.footer-left .description {
+    color: var(--outstanding-content);
+    font-size: 14px;
+}
+
+.footer-left .social {
+    display: flex;
+    gap: 20px;
+}
+
+.social .icon {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 9999px;
+}
+
+.social .icon:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer .about-us {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about-us .item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+}
+
+.item .link-button {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--outstanding-content);
+}
+
+.link-button p {
+    cursor: pointer;
+}
+
+.link-button p:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    width: var(--width-content);
+    margin: auto;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bottom p {
+    font-weight: 500;
+    color: var(--outstanding-content);
+}

@@ -14,23 +14,40 @@ const HighlightProducts = ({ title }) => {
         dispatch(fetchProducts(title));
     }, [dispatch, title]);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) {
+        return (
+            <div id='highlight-products'>
+                <div className='highlight-products'>
+                    <h1 className='highlight-title'>{title}</h1>
+                    <ul className='product-list'>
+                        <li className='loading-product'></li>
+                        <li className='loading-product'></li>
+                        <li className='loading-product'></li>
+                        <li className='loading-product'></li>
+                    </ul>
+                    <button className='view-all'>Loading...</button>
+                </div>
+            </div>
+        );
+    }
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
 
     return (
-        <div id="highlight-products">
+        <div id='highlight-products'>
             <div className='highlight-products'>
                 <h1 className='highlight-title'>{title}</h1>
                 <ul className='product-list'>
                     {
                         products?.slice(0, 4).map((product) => (
                             <li key={product.id} className='product'>
-                                <div className="image">
+                                <div className='image'>
                                     <img src={product.image} alt={product.title} />
                                 </div>
                                 <h4 className='title'>{product.title}</h4>
-                                <div className="rating-purchases">
-                                    <div className="rating">
+                                <div className='rating-purchases'>
+                                    <div className='rating'>
                                         <StarFill className='star-fill' />
                                         <p className='rate'>{product.rating.rate}</p>
                                     </div>
@@ -38,18 +55,17 @@ const HighlightProducts = ({ title }) => {
                                         <p>{product.rating.count} purchases</p>
                                     </div>
                                 </div>
-                                <div className="price-addToCart">
+                                <div className='price-addToCart'>
                                     <p className='price'>{product.price} $</p>
-                                    <div className="bagplus">
+                                    <button className='bagplus'>
                                         <BagPlus className='icon' />
-                                    </div>
+                                    </button>
                                 </div>
                             </li>
                         ))
                     }
                 </ul>
-                <button>View All</button>
-                <hr />
+                <button className='view-all'>View All</button>
             </div>
         </div>
     );

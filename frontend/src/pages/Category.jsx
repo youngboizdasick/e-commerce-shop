@@ -1,8 +1,11 @@
 import React from 'react'
+import Footer from '../components/Footer/Footer'
 
 const Category = () => {
   return (
-    <div>Category</div>
+    <div>
+      <Footer />
+    </div>
   )
 }
 

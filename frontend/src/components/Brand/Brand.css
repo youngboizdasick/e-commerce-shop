@@ -3,7 +3,7 @@
 }
 
 .brand {
-    width: var(--with-content);
+    width: var(--width-content);
     margin: auto;
     background-color: #000;
     display: flex;

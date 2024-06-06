@@ -3,7 +3,7 @@
 }
 
 .hero {
-    width: var(--with-content);
+    width: var(--width-content);
     margin: auto;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@
 }
 
 .hero-left .content {
-    width: var(--with-content);
+    width: var(--width-content);
     font-size: 14px;
     color: var(--outstanding-content);
 }

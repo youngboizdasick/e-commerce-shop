@@ -1,5 +1,5 @@
 .navbar {
-    width: var(--with-content);
+    width: var(--width-content);
     margin: auto;
     display: flex;
     padding: 20px 0;
